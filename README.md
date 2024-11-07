@@ -1,1 +1,1 @@
-# Web-Color-pallet
+# Web-Color-pallet app
