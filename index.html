@@ -6,617 +6,148 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web color pallet</title>
-    <link rel="stylesheet" href="allFiles/colorPalet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="allFiles/pallet.css">
     <link rel="icon" href="https://tse1.mm.bing.net/th?id=OIP.6moqVCfv4LwQJKaBeUsaEwHaHa&pid=Api&P=0&h=180">
+    <link rel="stylesheet" href="index/newstyle.css">
 
-    <link rel="stylesheet" href="allFiles/allclr3.css">
-
-    <link rel="stylesheet" href="allFiles\style.css">
 
 </head>
 
 <body>
+    <div class="ms-header">
 
-
-    <div class="header">
-
-        <a href="">New</a>
-        <a href="">popular</a>
-        <a href="">Collection</a>
-        <a href="">Random</a>
-
-    </div>
-
-    <div class="bgclor">
-
-        <div class="left">
-            <div class="leftfix">
-                <div class="color-categories">
-                    <a value="1" id="randomColor">Random Color</a>
-                    <a value="2" id="complimentryColor">Complimentry</a>
-                    <a value="3" id="tridicColor">Tridic color</a>
-                    <a value="4" id="tetradicColor">Tetradic color</a>
-                    <a value="5" id="analogosColor">Analogos color</a>
-                    <a href="#pastel">Pastel</a>
-                    <a href="#vintage">Vintage</a>
-                    <a href="#retro">Retro</a>
-                    <a href="#neon">Neon</a>
-                    <a href="#gold">Gold</a>
-                    <a href="#light">Light</a>
-                    <a href="#dark">Dark</a>
-                    <a href="#warm">Warm</a>
-                    <a href="#cold">Cold</a>
-                    <a href="#summer">Summer</a>
-                    <a href="#fall">Fall</a>
-                    <a href="#winter">Winter</a>
-                    <a href="#spring">Spring</a>
-                    <a href="#happy">Happy</a>
-                    <a href="#nature">Nature</a>
-                    <a href="#earth">Earth</a>
-                    <a href="#night">Night</a>
-                    <a href="#space">Space</a>
-                    <a href="#rainbow">Rainbow</a>
-                    <a href="#gradient">Gradient</a>
-                    <a href="#sunset">Sunset</a>
-                    <a href="#sky">Sky</a>
-                    <a href="#sea">Sea</a>
-                    <a href="#kids">Kids</a>
-                    <a href="#skin">Skin</a>
-                    <a href="#food">Food</a>
-                    <a href="#cream">Cream</a>
-                    <a href="#coffee">Coffee</a>
-                </div>
-
-            </div>
-        </div>
-
-        <div id="pallet-container">
-
-
-
-
-
-            <div class="intro">
-                Want to know what colors look good together? Web Pallet's Color Wheel makes color combinations easy.
-
-            </div>
-
-            <div class="color-picker-container">
-                <h3>1. Pick a color</h3>
-                <canvas id="colorPalette" width="300" height="300"></canvas>
-                <p id="selectedColor">#2e72d1</p>
-
-                <h3>2. Choose a color combination</h3>
-                <select id="colorScheme">
-                    <option value="complimentry">Complimentry</option>
-                    <option value="triadic">Triadic</option>
-                    <option value="triadic">Tetradic</option>
-                    <option value="analogos">analogos color</option>
-
-                    <!-- Additional options for other color combinations -->
-                </select>
-
-                <div class="color-result" id="colorResult">
-                    <!-- Colors will be displayed here -->
-                </div>
-            </div>
+        <div class="ms-header-Link">
+            <a value="4" id="tetradicColor">New </a>
+            <a value="1" id="randomColor">Random</a>
+            <a value="4">Popular</a>
+            <a value="4">Collection</a>
 
 
         </div>
 
+        <div class="ms-header-option">
+            <div class="ms-3-line-p">
+                <div class="ms-3-line-h"></div>
+                <div class="ms-3-line-h"></div>
+                <div class="ms-3-line-h"></div>
+
+            </div>
+        </div>
+
     </div>
 
+    <div class="ma-d ms-main-d">
 
 
-    <div class="root">
+        <div class="ms-main-d-ch1">
 
-
-
-        <div class="right">
-
-
-            <div class="set">
-
-
-
-
-                <div class="colorset set1">
-                    <div class="clr3">
-                        <div class="clr s1c1" style="background-color: #ffff00;"></div>
-                        <div class="clr s1c2" style="background-color: #00008b;"></div>
-                        <div class="clr s1c3" style="background-color: #73f990;"></div>
+            <div class="ms-l-sidebar">
+                <div class="ms-l-sidebar-ch">
+                    <div class="ms-color-categories">
+                        <a value="1" id="ms-randomColor">Random</a>
+                        <a value="2" id="ms-Color-couple">Color couple</a>
+                        <a value="3" id="ms-Color-Sample">Color Sample</a>
+                        <a value="4" id="ms-Four-Collection">Four Collection</a>
+                        <a value="2c" id="complimentryColor">Complimentry</a>
+                        <a value="3c" id="tridicColor">Tridic Color</a>
+                        <a value="4c" id="tetradicColor">Tetradic Color</a>
+                        <!-- <a value="5c" id="analogosColor">Analogos Color</a> -->
                     </div>
-                    <div class="like">
-                        <i class="fa fa-solid fa-heart"></i>
-                        <span>1 day ago</span>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ms-main-d-ch2">
+            <div class="ms-main-r" id="pallet-container">
+
+                <div class="ms-pre-written-p">
+
+                    <div class="ms-pre-written">
+                        <span style="font-size: 40px; color: #09ff32;">Web Pallet's </span>Color Wheel makes color
+                        combinations easy.
+                        <br>
+
+                        Want to know what colors look good together......?
+
                     </div>
                 </div>
 
-                <div class="colorset set2">
-                    <div class="clr3">
-                        <div class="clr s2c1" style="background-color: #ff0000;"></div>
-                        <div class="clr s2c2" style="background-color: #008000;"></div>
-                        <div class="clr s2c3" style="background-color: #0000ff;"></div>
-                    </div>
-                    <div class="like">
-                        <i class="fa fa-solid fa-heart"></i>
-                        <span>1 day ago</span>
+                <div class="ms-color-picker-container">
+                    <h3>Pick a color</h3>
+                    <canvas class="ms-colorPalette-c" id="colorPalette" width="300" height="300"></canvas>
+                    <p class="ms-selectedColor-v" id="selectedColor">#2e72d1</p>
+
+                    <h3>Choose a color combination</h3>
+                    <select class="ms-colorScheme-t" id="colorScheme">
+                        <option value="triadic">Triadic</option>
+                        <!-- <option value="complimentry">Complimentry</option> -->
+                        <!-- <option value="triadic">Tetradic</option> -->
+                        <!-- <option value="analogos">analogos color</option> -->
+
+                        <!-- Additional options for other color combinations -->
+                    </select>
+
+                    <div class="color-result ms-color-result" id="colorResult">
+                        <div style="background-color: rgb(244, 249, 18);">#F4F912</div>
+                        <div style="background-color: rgb(73, 249, 19);">#49f913</div>
+                        <div style="background-color: rgb(245, 78, 18);">#f54e12</div>
                     </div>
                 </div>
 
-                <div class="colorset set3">
-                    <div class="clr3">
-                        <div class="clr s3c1" style="background-color: #800080;"></div>
-                        <div class="clr s3c2" style="background-color: #ff6347;"></div>
-                        <div class="clr s3c3" style="background-color: #f0e68c;"></div>
-                    </div>
-                    <div class="like">
-                        <i class="fa fa-solid fa-heart"></i>
-                        <span>1 day ago</span>
-                    </div>
-                </div>
-
-                <div class="colorset set4">
-                    <div class="clr3">
-                        <div class="clr s4c1" style="background-color: #ff4500;"></div>
-                        <div class="clr s4c2" style="background-color: #ff6347;"></div>
-                        <div class="clr s4c3" style="background-color: #d2691e;"></div>
-                    </div>
-                    <div class="like">
-                        <i class="fa fa-solid fa-heart"></i>
-                        <span>1 day ago</span>
-                    </div>
-                </div>
-
-                <div class="colorset set5">
-                    <div class="clr3">
-                        <div class="clr s5c1" style="background-color: #f0e68c;"></div>
-                        <div class="clr s5c2" style="background-color: #98fb98;"></div>
-                        <div class="clr s5c3" style="background-color: #ff1493;"></div>
-                    </div>
-                    <div class="like">
-                        <i class="fa fa-solid fa-heart"></i>
-                        <span>1 day ago</span>
-                    </div>
-                </div>
-
-                <div class="colorset set6">
-                    <div class="clr3">
-                        <div class="clr s6c1" style="background-color: #00bfff;"></div>
-                        <div class="clr s6c2" style="background-color: #4682b4;"></div>
-                        <div class="clr s6c3" style="background-color: #00ced1;"></div>
-                    </div>
-                    <div class="like">
-                        <i class="fa fa-solid fa-heart"></i>
-                        <span>1 day ago</span>
-                    </div>
-                </div>
-
-                <div class="colorset set7">
-                    <div class="clr3">
-                        <div class="clr s7c1" style="background-color: #c71585;"></div>
-                        <div class="clr s7c2" style="background-color: #d2691e;"></div>
-                        <div class="clr s7c3" style="background-color: #deb887;"></div>
-                    </div>
-                    <div class="like">
-                        <i class="fa fa-solid fa-heart"></i>
-                        <span>1 day ago</span>
-                    </div>
-                </div>
-
-                <div class="colorset set8">
-                    <div class="clr3">
-                        <div class="clr s8c1" style="background-color: #a52a2a;"></div>
-                        <div class="clr s8c2" style="background-color: #5f9ea0;"></div>
-                        <div class="clr s8c3" style="background-color: #9acd32;"></div>
-                    </div>
-                    <div class="like">
-                        <i class="fa fa-solid fa-heart"></i>
-                        <span>1 day ago</span>
-                    </div>
-                </div>
-
-                <div class="colorset set9">
-                    <div class="clr3">
-                        <div class="clr s9c1" style="background-color: #ff4500;"></div>
-                        <div class="clr s9c2" style="background-color: #2e8b57;"></div>
-                        <div class="clr s9c3" style="background-color: #dcdcdc;"></div>
-                    </div>
-                    <div class="like">
-                        <i class="fa fa-solid fa-heart"></i>
-                        <span>1 day ago</span>
-                    </div>
-                </div>
-
-                <div class="colorset set10">
-                    <div class="clr3">
-                        <div class="clr s10c1" style="background-color: #ffff00;"></div>
-                        <div class="clr s10c2" style="background-color: #00008b;"></div>
-                        <div class="clr s10c3" style="background-color: #d3d3d3;"></div>
-                    </div>
-                    <div class="like">
-                        <i class="fa fa-solid fa-heart"></i>
-                        <span>1 day ago</span>
-                    </div>
-                </div>
-
-                <div class="colorset set11">
-                    <div class="clr3">
-                        <div class="clr s11c1" style="background-color: #6a5acd;"></div>
-                        <div class="clr s11c2" style="background-color: #ff8c00;"></div>
-                        <div class="clr s11c3" style="background-color: #98fb98;"></div>
-                    </div>
-                    <div class="like">
-                        <i class="fa fa-solid fa-heart"></i>
-                        <span>1 day ago</span>
-                    </div>
-                </div>
-
-                <div class="colorset set12">
-                    <div class="clr3">
-                        <div class="clr s12c1" style="background-color: #cd5c5c;"></div>
-                        <div class="clr s12c2" style="background-color: #f08080;"></div>
-                        <div class="clr s12c3" style="background-color: #faebd7;"></div>
-                    </div>
-                    <div class="like">
-                        <i class="fa fa-solid fa-heart"></i>
-                        <span>1 day ago</span>
-                    </div>
-                </div>
-
-                <div class="colorset set13">
-                    <div class="clr3">
-                        <div class="clr s13c1" style="background-color: #ff1493;"></div>
-                        <div class="clr s13c2" style="background-color: #d2691e;"></div>
-                        <div class="clr s13c3" style="background-color: #32cd32;"></div>
-                    </div>
-                    <div class="like">
-                        <i class="fa fa-solid fa-heart"></i>
-                        <span>1 day ago</span>
-                    </div>
-                </div>
-
-                <div class="colorset set14">
-                    <div class="clr3">
-                        <div class="clr s14c1" style="background-color: #4169e1;"></div>
-                        <div class="clr s14c2" style="background-color: #ff6347;"></div>
-                        <div class="clr s14c3" style="background-color: #8b0000;"></div>
-                    </div>
-                    <div class="like">
-                        <i class="fa fa-solid fa-heart"></i>
-                        <span>1 day ago</span>
-                    </div>
-                </div>
-
-                <div class="colorset set15">
-                    <div class="clr3">
-                        <div class="clr s15c1" style="background-color: #00ff00;"></div>
-                        <div class="clr s15c2" style="background-color: #00bfff;"></div>
-                        <div class="clr s15c3" style="background-color: #8b4513;"></div>
-                    </div>
-                    <div class="like">
-                        <i class="fa fa-solid fa-heart"></i>
-                        <span>1 day ago</span>
-                    </div>
-                </div>
-
-                <div class="colorset set16">
-                    <div class="clr3">
-                        <div class="clr s16c1" style="background-color: #00008b;"></div>
-                        <div class="clr s16c2" style="background-color: #a52a2a;"></div>
-                        <div class="clr s16c3" style="background-color: #ff6347;"></div>
-                    </div>
-                </div>
-
-
-                <div class="colorset set16">
-                    <div class="clr3">
-                        <div class="clr s16c1" style="background-color: #dda0dd;"></div>
-                        <div class="clr s16c2" style="background-color: #8b0000;"></div>
-                        <div class="clr s16c3" style="background-color: #f5f5f5;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set17">
-                    <div class="clr3">
-                        <div class="clr s17c1" style="background-color: #4b0082;"></div>
-                        <div class="clr s17c2" style="background-color: #98fb98;"></div>
-                        <div class="clr s17c3" style="background-color: #8a2be2;"></div>
-                    </div>
-                </div>
-
-
-
-                <div class="colorset set18">
-                    <div class="clr3">
-                        <div class="clr s18c1" style="background-color: #4682b4;"></div>
-                        <div class="clr s18c2" style="background-color: #a52a2a;"></div>
-                        <div class="clr s18c3" style="background-color: #b0c4de;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set19">
-                    <div class="clr3">
-                        <div class="clr s19c1" style="background-color: #7fff00;"></div>
-                        <div class="clr s19c2" style="background-color: #dc143c;"></div>
-                        <div class="clr s19c3" style="background-color: #c71585;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set20">
-                    <div class="clr3">
-                        <div class="clr s20c1" style="background-color: #2e8b57;"></div>
-                        <div class="clr s20c2" style="background-color: #8b4513;"></div>
-                        <div class="clr s20c3" style="background-color: #adff2f;"></div>
-                    </div>
-                </div>
-
-
-                <div class="colorset set21">
-                    <div class="clr3">
-                        <div class="clr s21c1" style="background-color: #d2691e;"></div>
-                        <div class="clr s21c2" style="background-color: #f5deb3;"></div>
-                        <div class="clr s21c3" style="background-color: #cd853f;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set22">
-                    <div class="clr3">
-                        <div class="clr s22c1" style="background-color: #c71585;"></div>
-                        <div class="clr s22c2" style="background-color: #b0e0e6;"></div>
-                        <div class="clr s22c3" style="background-color: #e6e6fa;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set23">
-                    <div class="clr3">
-                        <div class="clr s23c1" style="background-color: #0000ff;"></div>
-                        <div class="clr s23c2" style="background-color: #4682b4;"></div>
-                        <div class="clr s23c3" style="background-color: #6495ed;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set24">
-                    <div class="clr3">
-                        <div class="clr s24c1" style="background-color: #ff8c00;"></div>
-                        <div class="clr s24c2" style="background-color: #ffd700;"></div>
-                        <div class="clr s24c3" style="background-color: #ff1493;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set25">
-                    <div class="clr3">
-                        <div class="clr s25c1" style="background-color: #800000;"></div>
-                        <div class="clr s25c2" style="background-color: #ff6347;"></div>
-                        <div class="clr s25c3" style="background-color: #b22222;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set26">
-                    <div class="clr3">
-                        <div class="clr s26c1" style="background-color: #ff4500;"></div>
-                        <div class="clr s26c2" style="background-color: #ff0000;"></div>
-                        <div class="clr s26c3" style="background-color: #ff6347;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set27">
-                    <div class="clr3">
-                        <div class="clr s27c1" style="background-color: #800080;"></div>
-                        <div class="clr s27c2" style="background-color: #9932cc;"></div>
-                        <div class="clr s27c3" style="background-color: #9400d3;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set28">
-                    <div class="clr3">
-                        <div class="clr s28c1" style="background-color: #d3d3d3;"></div>
-                        <div class="clr s28c2" style="background-color: #00008b;"></div>
-                        <div class="clr s28c3" style="background-color: #008b8b;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set29">
-                    <div class="clr3">
-                        <div class="clr s29c1" style="background-color: #ff69b4;"></div>
-                        <div class="clr s29c2" style="background-color: #ff1493;"></div>
-                        <div class="clr s29c3" style="background-color: #ffb6c1;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set30">
-                    <div class="clr3">
-                        <div class="clr s30c1" style="background-color: #f0e68c;"></div>
-                        <div class="clr s30c2" style="background-color: #98fb98;"></div>
-                        <div class="clr s30c3" style="background-color: #8a2be2;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set31">
-                    <div class="clr3">
-                        <div class="clr s31c1" style="background-color: #ffb6c1;"></div>
-                        <div class="clr s31c2" style="background-color: #ff4500;"></div>
-                        <div class="clr s31c3" style="background-color: #ff6347;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set32">
-                    <div class="clr3">
-                        <div class="clr s32c1" style="background-color: #ff1493;"></div>
-                        <div class="clr s32c2" style="background-color: #8b0000;"></div>
-                        <div class="clr s32c3" style="background-color: #c71585;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set33">
-                    <div class="clr3">
-                        <div class="clr s33c1" style="background-color: #0000cd;"></div>
-                        <div class="clr s33c2" style="background-color: #8b008b;"></div>
-                        <div class="clr s33c3" style="background-color: #ff6347;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set34">
-                    <div class="clr3">
-                        <div class="clr s34c1" style="background-color: #dcdcdc;"></div>
-                        <div class="clr s34c2" style="background-color: #a9a9a9;"></div>
-                        <div class="clr s34c3" style="background-color: #808080;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set35">
-                    <div class="clr3">
-                        <div class="clr s35c1" style="background-color: #8b4513;"></div>
-                        <div class="clr s35c2" style="background-color: #5f9ea0;"></div>
-                        <div class="clr s35c3" style="background-color: #deb887;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set36">
-                    <div class="clr3">
-                        <div class="clr s36c1" style="background-color: #4b0082;"></div>
-                        <div class="clr s36c2" style="background-color: #32cd32;"></div>
-                        <div class="clr s36c3" style="background-color: #add8e6;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set37">
-                    <div class="clr3">
-                        <div class="clr s37c1" style="background-color: #00bfff;"></div>
-                        <div class="clr s37c2" style="background-color: #f0e68c;"></div>
-                        <div class="clr s37c3" style="background-color: #ff1493;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set38">
-                    <div class="clr3">
-                        <div class="clr s38c1" style="background-color: #ff8c00;"></div>
-                        <div class="clr s38c2" style="background-color: #ff4500;"></div>
-                        <div class="clr s38c3" style="background-color: #ff6347;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set39">
-                    <div class="clr3">
-                        <div class="clr s39c1" style="background-color: #d2691e;"></div>
-                        <div class="clr s39c2" style="background-color: #f0e68c;"></div>
-                        <div class="clr s39c3" style="background-color: #98fb98;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set40">
-                    <div class="clr3">
-                        <div class="clr s40c1" style="background-color: #c71585;"></div>
-                        <div class="clr s40c2" style="background-color: #b0c4de;"></div>
-                        <div class="clr s40c3" style="background-color: #ffb6c1;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set41">
-                    <div class="clr3">
-                        <div class="clr s41c1" style="background-color: #dc143c;"></div>
-                        <div class="clr s41c2" style="background-color: #ff1493;"></div>
-                        <div class="clr s41c3" style="background-color: #8b0000;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set42">
-                    <div class="clr3">
-                        <div class="clr s42c1" style="background-color: #ff69b4;"></div>
-                        <div class="clr s42c2" style="background-color: #ffb6c1;"></div>
-                        <div class="clr s42c3" style="background-color: #ff6347;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set43">
-                    <div class="clr3">
-                        <div class="clr s43c1" style="background-color: #f0e68c;"></div>
-                        <div class="clr s43c2" style="background-color: #228b22;"></div>
-                        <div class="clr s43c3" style="background-color: #8b0000;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set44">
-                    <div class="clr3">
-                        <div class="clr s44c1" style="background-color: #00bfff;"></div>
-                        <div class="clr s44c2" style="background-color: #4682b4;"></div>
-                        <div class="clr s44c3" style="background-color: #00ced1;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set45">
-                    <div class="clr3">
-                        <div class="clr s45c1" style="background-color: #b0c4de;"></div>
-                        <div class="clr s45c2" style="background-color: #e0ffff;"></div>
-                        <div class="clr s45c3" style="background-color: #add8e6;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set46">
-                    <div class="clr3">
-                        <div class="clr s46c1" style="background-color: #ff6347;"></div>
-                        <div class="clr s46c2" style="background-color: #ff8c00;"></div>
-                        <div class="clr s46c3" style="background-color: #d2691e;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set47">
-                    <div class="clr3">
-                        <div class="clr s47c1" style="background-color: #ff1493;"></div>
-                        <div class="clr s47c2" style="background-color: #ff6347;"></div>
-                        <div class="clr s47c3" style="background-color: #d2691e;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set48">
-                    <div class="clr3">
-                        <div class="clr s48c1" style="background-color: #ff8c00;"></div>
-                        <div class="clr s48c2" style="background-color: #32cd32;"></div>
-                        <div class="clr s48c3" style="background-color: #8b4513;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set49">
-                    <div class="clr3">
-                        <div class="clr s49c1" style="background-color: #ffb6c1;"></div>
-                        <div class="clr s49c2" style="background-color: #ff1493;"></div>
-                        <div class="clr s49c3" style="background-color: #ff6347;"></div>
-                    </div>
-                </div>
-
-                <div class="colorset set50">
-                    <div class="clr3">
-                        <div class="clr s50c1" style="background-color: #c71585;"></div>
-                        <div class="clr s50c2" style="background-color: #d2691e;"></div>
-                        <div class="clr s50c3" style="background-color: #deb887;"></div>
-                    </div>
-                </div>
 
             </div>
 
-
-
-            <div class="colorBox">
+            <div class="ms-clr-set-p">
 
 
 
+                <div value="1" class="ms-clr-set ms-clr-set-d1">
+                    <iframe src="index/ms-clr-set-d1.html" frameborder="0"></iframe>
+                </div>
+
+                <div value="2" class="ms-clr-set ms-clr-set-d2">
+                    <iframe src="index/ms-clr-set-d2.html" frameborder="0"></iframe>
+                </div>
+
+                <div value="3" class="ms-clr-set ms-clr-set-d3">
+                    <iframe src="index/ms-clr-set-d3.html" frameborder="0"></iframe>
+                </div>
+
+                
+                <div value="4" class="ms-clr-set ms-clr-set-d4">
+                    <iframe src="index/ms-clr-set-d4.html" frameborder="0"></iframe>
+                </div>
+
+                
+
+           
+                <!-- 
+                <div class="ms-clr-set ms-clr-set-d5">
+                </div> -->
+
+                <div value="2c" class="ms-clr-set ms-clr-set-d2c">
+                </div>
+
+                <div value="3c" class="ms-clr-set ms-clr-set-d3c">
+                </div>
+
+                <div value="4c" class="ms-clr-set ms-clr-set-d4c">
+                </div>
+
+                <div value="5c" class="ms-clr-set ms-clr-set-d5c">
+                </div>
             </div>
+
 
         </div>
     </div>
-
-
     </div>
-
-
-
-
 
     <script src="allFiles/colorPalet.js"></script>
     <script src="allFiles/pallet.js"></script>
-
+    <script src="allFiles/leftapk.js"></script>
 </body>
 
 </html>
