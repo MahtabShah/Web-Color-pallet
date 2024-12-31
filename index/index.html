@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graph Plotter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      width: 1000px;
+      height: 600px;
+      border: 2px solid transparent;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    #coordinates {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 16px;
+      color: #444;
+    }
+
+    .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: red;
+      position: absolute;
+    }
+
+    .axis-x, .axis-y {
+      position: absolute;
+      background-color: black;
+    }
+
+    .axis-x {
+      width: 100%;
+      height: 2px;
+      top: 50%;
+    }
+
+    .axis-y {
+      height: 100%;
+      width: 2px;
+      left: 50%;
+    }
+
+    .input-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    input[type="text"] {
+      width: 200px;
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="container">
+    <p id="coordinates">Coordinates: (X, Y)</p>
+
+    <!-- Coordinate Axes -->
+    <div class="axis-x"></div>
+    <div class="axis-y"></div>
+  </div>
+
+  <!-- Input and Button to accept function -->
+  <div class="input-container">
+    <label for="function-input">Enter function (x^2 + 400x + 30) </label>
+    <input type="text" id="function-input" value="x^2 + 400x + 30">
+    <button id="plot-btn">Plot Graph</button>
+  </div>
+
+  <script>
+    // Function to place a dot at specific X, Y coordinates inside the container
+    function placeDot(x, y) {
+      const container = document.getElementById('container');
+
+      // Create a dot element
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      
+      // Position the dot using the X and Y values
+      dot.style.left = `${x - 3}px`; // Subtract 3 to center the dot
+      dot.style.top = `${y - 3}px`;  // Subtract 3 to center the dot
+      
+      // Append the dot to the container
+      container.appendChild(dot);
+    }
+
+    // Function to parse and fix the function input
+    function parseFunction(input) {
+      // Replace x^n with Math.pow(x, n) and 400x with 400*x
+      input = input.replace(/([0-9])x/g, '$1*x'); // e.g., 400x => 400*x
+      input = input.replace(/x\^(\d+)/g, 'Math.pow(x, $1)'); // e.g., x^2 => Math.pow(x, 2)
+      return input;
+    }
+
+    // Event listener to capture the X, Y coordinates when clicked
+    document.getElementById('container').addEventListener('click', function(event) {
+      const container = event.currentTarget;
+
+      // Get the container dimensions to calculate the center
+      const containerWidth = container.offsetWidth;
+      const containerHeight = container.offsetHeight;
+
+      // Calculate the X and Y position of the mouse click relative to the container's center
+      const centerX = containerWidth / 2;
+      const centerY = containerHeight / 2;
+
+      const x = event.clientX - container.offsetLeft - centerX;
+      const y = event.clientY - container.offsetTop - centerY;
+
+      // Display the coordinates with respect to the center
+      document.getElementById('coordinates').textContent = `Coordinates: (${x}, ${y})`;
+
+      // Place a dot at the clicked position
+      placeDot(x + centerX, y + centerY);
+    });
+
+    // Event listener for the Plot Graph button
+    document.getElementById('plot-btn').addEventListener('click', function() {
+      const func = document.getElementById('function-input').value;
+      const container = document.getElementById('container');
+
+      // Clear existing dots
+      const dots = container.querySelectorAll('.dot');
+      dots.forEach(dot => dot.remove());
+
+      // Parse and fix the function input
+      const parsedFunc = parseFunction(func);
+
+      // Get the container dimensions to calculate the center
+      const containerWidth = container.offsetWidth;
+      const containerHeight = container.offsetHeight;
+
+      // Calculate the center of the container
+      const centerX = containerWidth / 2;
+      const centerY = containerHeight / 2;
+
+      // Plot the function
+      for (let i = -300; i < 300; i++) {
+        let x = i * 0.5;  // Adjust the scale of x to fit the container
+
+        // Use the eval() function to evaluate the user-defined function
+        let y = eval(parsedFunc.replace('x', x))*0.008;
+
+        // Adjust the y value based on the container's center
+        if (y < 300 && y > -300) {
+          placeDot(x + centerX, -y + centerY);
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

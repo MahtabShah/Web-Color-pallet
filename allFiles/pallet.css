@@ -3,32 +3,7 @@
     padding: 0;
 }
 
-#pallet-container {
-    /* height: 70vh; */
-    /* border: 2px solid; */
-    margin-top: 50px;
-    margin-left: min(40%, 220px);
 
-
-    right: 0px;
-    top: 0;
-    /* background-color: #f7f1f1; */
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="700"><defs><linearGradient id="gradientFill" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="%237f00ff" /><stop offset="100%" stop-color="%23B388FFDE" /></linearGradient></defs><path d="M0,0 L0,500 C0,500 400,900 1100,500 C1100,500 1295,380 1600,330 C1600,330 1800,340 2000,0 Z" fill="url(%23gradientFill)" /></svg>');
-    background-size: cover;
-
-
-
-
-
-    background-repeat: no-repeat;
-
-
-}
 
 #pallet-container h3 {
     margin: 1.5rem;
@@ -117,9 +92,6 @@
         margin: 0.16721rem;
     }
 
-    #pallet-container{
-        margin-left: min(28%, 220px);
-    }
 
     .intro {
         padding: 20px;
@@ -134,10 +106,7 @@
     }
 
 
-    .left {
-        width: 28%;
-    }
-
+   
 }
 
 @media(min-width:420px ) and (max-width:620px) {
@@ -158,12 +127,10 @@
         margin: 8px 2px;
         padding: 5px;
         padding-left: 10px;
+        border: 0px solid green;
     }
 
-    .left {
-        width: 28%;
-    }
-
+   
     .color-picker-container {
 
         width: min(300px , 86%);
@@ -186,6 +153,8 @@
 
     .right {
         margin-left: min(25%, 220px);
+        border: 2px solid black;
+
     }
 
     .color-box{
@@ -222,7 +191,6 @@
        
         margin: 0;
         flex-direction: column;
-        margin-left: min(0%, 0px);
         margin-top: 50px;
     }
 
@@ -247,9 +215,5 @@
         font-size: 1.2rem;
         margin: 10px;
     }
-
-    .root{
-        margin: 0;
-        display: block;
-    }
 }
+

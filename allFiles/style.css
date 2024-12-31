@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+.bgclor{
+
+    border: 2px solid red;
+    margin-top: 50px;
+    padding: 2px;
+   
+}
+
+#pallet-container{
+    border: 2px solid red;
+    margin-left: 28%;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="700"><defs><linearGradient id="gradientFill" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="%237f00ff" /><stop offset="100%" stop-color="%23B388FFDE" /></linearGradient></defs><path d="M0,0 L0,500 C0,500 400,900 1100,500 C1100,500 1295,380 1600,330 C1600,330 1800,340 2000,0 Z" fill="url(%23gradientFill)" /></svg>');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+}

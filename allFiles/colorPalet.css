@@ -1,22 +1,31 @@
-html{
-    background: linear-gradient(#d3b2f5 , #f7f2fc);
-    background-repeat: no-repeat;
+* {
+    border: 1px solid red;
 }
+
+html {
+    background: linear-gradient(#d3b2f5, #f7f2fc);
+    background-repeat: no-repeat;
+    border: 0px solid rgb(170, 161, 161);
+
+}
+
 
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     /* background-color: #f2ebeb; */
-   
+    border: 0px solid rgb(170, 161, 161);
+
+
 
 
 }
 
-.header{
+.header {
     height: 50px;
     border-radius: 2px;
-    /* border: 1px solid rgb(170, 161, 161); */
+    border: 0px solid rgb(170, 161, 161);
     background-color: #7f00ff;
     position: relative;
     position: fixed;
@@ -28,24 +37,27 @@ body {
     z-index: 5;
 }
 
-.header a{
+.header a {
     color: #e1dce6;
     text-decoration: none;
     margin: 10px;
     padding: 4px;
     font-size: 18px;
-    
+    border: 0px solid rgb(170, 161, 161);
+
+
 
 
 }
 
 .root {
     display: flex;
-
     margin-top: 52px;
+    border: 2px solid rgb(60, 0, 255);
+    /* margin: min(27%, 220px); */
 }
 
-.colorBox{
+.colorBox {
 
     display: flex;
     flex-wrap: wrap;
@@ -54,40 +66,25 @@ body {
     /* margin-left: 30%; */
     flex-grow: 1;
     margin: 2px;
-    
+
 
 }
 
-.item{
-    flex-direction: column;
-    width: 200px;
-    margin: 10px 0px 10px 20px;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    margin: 10px 0px 10px 20px;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 14px;
-    /* font-weight: bold; */
-    flex-direction: column;
-    flex-grow: 1;
-    border-radius: 40px;
 
-}
 
-.flex{
+
+
+.flex {
     display: none;
 }
 
 
 
-.color-box{
+.color-box {
     width: 200px;
     height: 200px;
     display: flex;
-    margin: 10px 0px 10px 20px;
+    margin: 10px 20px 10px 0px;
     align-items: center;
     justify-content: center;
     color: #fff;
@@ -101,9 +98,10 @@ body {
 }
 
 
-.palette{
+
+.palette {
     display: flex;
-    margin: 10px 0px 10px 20px;
+    /* margin: 10px 0px 10px 20px; */
     align-items: center;
     justify-content: center;
     color: #fff;
@@ -117,7 +115,7 @@ body {
 }
 
 
-.colorPart{
+.colorPart {
     /* border: 1px solid red; */
     /* height: 40%; */
     min-height: 30px;
@@ -131,29 +129,34 @@ body {
 }
 
 
-.place{
-    width: 200px;
-}
-
 .left {
     width: 40%;
     /* min-width: 100px; */
     max-width: 220px;
     /* border: 1px solid red; */
     height: 100vh;
-    overflow-y: auto;
+    /* overflow-y: auto; */
+    position: sticky;
     position: fixed;
     top: 50px;
+    /* border: 2px solid yellow; */
+
     /* background-color: aliceblue; */
 }
 
-.color-categories::-webkit-scrollbar{
+
+.leftfix{
+    border: 0px solid yellow;
+
+}
+
+.color-categories::-webkit-scrollbar {
     width: 4px;
     border-radius: 0;
     /* background-color: #de2323; */
 }
 
-.color-categories::-webkit-scrollbar-thumb{
+.color-categories::-webkit-scrollbar-thumb {
     width: 10px;
     background-color: rgb(100, 107, 107);
     border-radius: 0;
@@ -164,7 +167,7 @@ body {
 
 
 .right {
-    margin-left: min(40%, 220px);
+    /* margin-left: min(40%, 220px); */
     flex-grow: 1;
     /* height: 100vh; */
     /* overflow-y: auto; */
@@ -178,30 +181,33 @@ body {
     text-decoration: none;
     overflow-y: auto;
     height: 100vh;
+    border: 0px solid yellow;
 }
 
 .color-categories a {
     text-decoration: none;
     color: rgb(40, 38, 38);
-    margin: 10px;
-    padding: 5px;
+    margin: 0px 0;
+    padding: 10px;
     padding-left: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.064);
 
 
 
 }
 
-.color-categories a:hover{
+.color-categories a:hover {
     cursor: pointer;
-    transform:scale(1.06);
-    box-shadow: 0 0 5px rgb(123, 117, 117);
-    border-radius: 5px;
+    /* transform: scale(1.06); */
+    /* box-shadow: 0 0 5px rgb(123, 117, 117); */
+    border: 1px solid rgba(63, 50, 65, 0.094);
+    /* border-radius: 5px; */
 }
 
-i{
-    color: rgb(77, 81, 78);
-    width: 100%;
-    /* border: 1px solid red; */
+i {
+    color: rgb(185, 181, 181);
+    /* width: 100%; */
+    border: 0px solid red;
     font-size: 1.4rem;
 
     margin-top: 4px;
@@ -209,11 +215,12 @@ i{
     justify-content: end;
 }
 
-i:hover{
-    color: rgb(225, 20, 20);
+i:hover {
+    color: rgb(255, 0, 0);
 }
 
-.newDiv, .flex{
+.newDiv,
+.flex {
     display: flex;
     justify-content: space-between;
     /* padding: 4px; */

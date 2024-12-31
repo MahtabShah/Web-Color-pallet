@@ -1,13 +1,14 @@
 // Utility to generate a random hex color
+
 let c1 = 16, c2 = 0, c3 = 0;
 function getRandomColor() {
 
     const letters = '0123456789ABCDEF';
     let color = '#';
     for (let i = 0; i < 3; i++) {
-    color += letters[ Math.floor(Math.random() * 16)];
-    color += letters[ Math.floor(Math.random() * 16)];
-    
+        color += letters[Math.floor(Math.random() * 16)];
+        color += letters[Math.floor(Math.random() * 16)];
+
     }
 
 
@@ -153,10 +154,16 @@ function getColorAtAngle(baseColor, angle) {
 // Function to generate a color pallet
 let cnt = 0;
 
-function createColorPallet(n) {
+
+function createColorPallet(n, indicattor) {
+
     const colorBox = document.createElement('div');
-    colorBox.classList.add('color-box');
-    document.querySelector('.colorBox').appendChild(colorBox);
+    const clrBox = document.createElement('div');
+    clrBox.classList.add('clr3')
+    colorBox.appendChild(clrBox);
+    colorBox.classList.add('colorset');
+    colorBox.classList.add(`set${cnt + 51}`);
+    document.querySelector(`.ms-clr-set-d${n}${indicattor}`).appendChild(colorBox);
 
 
     const baseColor = getRandomColor();
@@ -175,31 +182,32 @@ function createColorPallet(n) {
     // else {
 
 
-        for (let i = 1; i < n; i++) {
+    for (let i = 1; i < n; i++) {
 
-            colors.push(getColorAtAngle(baseColor, i * (360 / (n))));
+        colors.push(getColorAtAngle(baseColor, i * (360 / (n))));
 
-        }
+    }
     // }
 
     cnt++;
+    let c = 1;
 
 
     colors.forEach(clr => {
         const colorPart = document.createElement('div');
-        colorPart.classList.add('colorPart');
+        colorPart.classList.add('clr');
+        colorPart.classList.add(`s${50 + cnt}c${c}`);
         colorPart.style.backgroundColor = clr;
 
-        colorPart.addEventListener('mouseover', () => {
-            colorPart.textContent = clr;
-        })
+        clrBox.appendChild(colorPart);
 
-        colorPart.addEventListener('mouseout', () => {
-            colorPart.textContent = '';
-        })
 
-        colorBox.appendChild(colorPart);
+        c++;
+        if (c === n) {
+            c = 1;
+        }
 
+        hexcodevis(colorPart);
 
     });
 
@@ -224,9 +232,9 @@ function createColorPallet(n) {
 }
 
 
-function createInitialColorBoxes(count) {
+function createInitialColorBoxes(count, n) {
     for (let i = 0; i < count; i++) {
-        createColorPallet(1); // Initial pallets
+        createColorPallet(n, 'c'); // Initial pallets
     }
 }
 
@@ -234,47 +242,154 @@ function createInitialColorBoxes(count) {
 
 
 // Create initial set of color boxes when page loads
-createInitialColorBoxes(50);
+createInitialColorBoxes(300, 2);
+createInitialColorBoxes(300, 3);
+createInitialColorBoxes(300, 4);
 
-let allAs = document.querySelectorAll(".color-categories")[0].children;
-let active = allAs[0];
+
+let n = 3;
+let indicattor = '';
+
+// document.querySelector('.ms-main-d-ch2').addEventListener('scroll', () => {
+
+//     if (document.querySelector('.ms-main-d-ch2').scrollTop >= document.querySelector('.ms-clr-set-p').offsetHeight
+//         - 600) {
+//         let condition = document.querySelectorAll('.ms-clr-set-active .colorset').length < 800;
+//         if (condition) {
+//             for (let i = 0; i < 60; i++) {
+//                 // createColorPallet(parseInt(active.attributes.value.nodeValue));
+//                 n = parseInt(document.querySelector('.ms-clr-set-active').attributes.value.nodeValue);
+
+//                 indicattor = document.querySelector('.ms-clr-set-active').attributes.value.nodeValue.replace(n, ''),
+
+//                     createColorPallet(n, indicattor);
+//             }
+//         }
 
 
-for (let i = 0; i < 4; i++) {
+//         // for (let i = 0; i < 5; i++) {
+//         //     generateAnalogousColors(getRandomColor());
+//         // }
+//     }
+// });
+
+
+
+
+
+
+
+function hexcodevis(clr) {
+    let rgb = clr.style.backgroundColor.toUpperCase().match(/([0-9]+)/g);
+    let span = document.createElement('span')
+    span.classList.add('hex-code')
+    clr.appendChild(span)
+    span.style.padding = '4px';
+    span.style.color = 'transparent';
+    span.style.background = 'transparent';
+    span.textContent = rgbToHex(rgb[0], rgb[1], rgb[2]);
+
+    clr.addEventListener('mouseover', () => {
+
+        clr.children[0].style.color = '#fff';
+        clr.children[0].style.background = '#333';
+    });
+
+    clr.addEventListener('mouseout', () => {
+        clr.children[0].style.color = 'transparent';
+        clr.children[0].style.background = 'transparent';
+    });
+
+    clr.addEventListener('click', async () => {
+        const Content = clr.children[0].textContent;
+
+        try {
+            // Use Clipboard API to copy the content
+            await navigator.clipboard.writeText(Content);
+            clr.children[0].textContent = 'copied';
+            setTimeout(() => {
+                clr.children[0].textContent = Content;
+
+            }, 1000)
+            // alert('color HEXcode copied !');
+        } catch (error) {
+            console.error('Error copying HEXcode:', error);
+            alert('Failed to copy HEXcode. Please try again...');
+        }
+    })
+}
+
+
+let allAs = document.querySelector(".ms-color-categories").children;
+let active = document.querySelector(`.ms-clr-set-d3`);
+active.classList.add('ms-clr-set-active');
+
+allAs[2].style.color = '#2a6cde';
+
+
+for (let i = 0; i < allAs.length; i++) {
 
     allAs[i].addEventListener('click', () => {
 
+        if (window.getComputedStyle(document.querySelector('.ms-3-line-p')).display !== 'none') {
+            document.querySelector('.ms-main-d-ch1').style.display = 'none';
 
-        document.querySelector('.colorBox').innerHTML = "";
+        }
 
-        let n = parseInt(allAs[i].attributes.value.nodeValue);
+        // document.querySelector('.colorBox').innerHTML = "";
+
+        n = allAs[i].attributes.value.nodeValue;
 
         if (active) {
-            active.classList.remove('active');
-            active = allAs[i];
-            active.classList.add('active');
+            active.classList.remove('ms-clr-set-active');
+            active = document.querySelector(`.ms-clr-set-d${n}`);
+            active.classList.add('ms-clr-set-active');
+            for (let j = 0; j < allAs.length; j++) {
+                allAs[j].style.color = 'initial';
+            }
+            allAs[i].style.color = '#2a6cde';
+            
+        }
+        cnt = -50;
+
+        if (i > 3) {
+
+
+            for (let i = 0; i < 40; i++) {
+                createColorPallet(parseInt(n), 'c');
+
+
+            }
         }
 
 
-        for (let i = 0; i < 20; i++) {
-            createColorPallet(n);
-        }
+
 
     })
 }
 
 
-window.addEventListener('scroll', () => {
+// for pre written clr3 50 pakcket
 
-    const rightContainer = document.querySelector('.right');
-    if ((window.innerHeight + window.scrollY) >= rightContainer.offsetHeight - 10) {
+document.querySelectorAll('iframe').forEach(iframe => {
+    setTimeout(() => {
 
-        for (let i = 0; i < 15; i++) {
-            createColorPallet(parseInt(active.attributes.value.nodeValue));
-        }
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document
 
-        for (let i = 0; i < 5; i++) {
-            generateAnalogousColors(getRandomColor());
-        }
-    }
+        // console.log(ifr)
+        let clr100 = iframeDoc.querySelectorAll('.clr');
+
+        console.log(iframeDoc)
+
+        for (let i = 0; i < clr100.length; i++) {
+            hexcodevis(clr100[i]);
+        };
+    }, 10);
+
 });
+
+// let clr100 = document.querySelectorAll('.clr');
+
+// for (let i = 0; i < clr100.length - 2700; i++) {
+//     hexcodevis(clr100[i]);
+// };
