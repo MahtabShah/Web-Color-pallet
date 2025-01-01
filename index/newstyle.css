@@ -267,6 +267,8 @@ body {
 }
 
 
+
+
 @media (max-width:740px) {
 
     .ms-main-r {
@@ -281,17 +283,28 @@ body {
 
     }
 
+    h3{
+        font-size:calc(min(23%, 85px) - 50px);
+        font-size: calc(10px + 40%);
+    }
 }
 
 @media (min-width:400px) and (max-width:620px) {
 
     .ms-color-picker-container {
         margin: 10px auto;
-        margin: clamp(20px , 5vw , 10px);
+        /* margin: clamp(20px , 5vw , 10px); */
+        margin:calc(min(20%, 80px) - 50px);
         min-width: 180px;
 
 
     }
+
+
+    .ms-clr-set-p > div{
+        padding: calc(min(17%, 80px) - 50px);
+    }
+
 
 }
 
@@ -310,7 +323,7 @@ body {
 
     .ms-main-d-ch1 {
         position: absolute;
-        right: 0;
+        /* right: 0; */
         box-shadow: 0 0 10px black;
         border: none;
         left: 0;
@@ -322,8 +335,8 @@ body {
 
     .ms-color-picker-container {
         margin: 10px auto;
-        margin: 16px;
         min-width: 170px;
+        margin:calc(min(23%, 85px) - 50px);
     }
 
     .ms-color-result {
@@ -331,6 +344,9 @@ body {
         font-size: 10px;
     }
 
+    .ms-clr-set-p > div{
+        padding: calc(min(23%, 85px) - 50px);
+    }
 
 }
 
