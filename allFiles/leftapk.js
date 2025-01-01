@@ -59,55 +59,55 @@ document.querySelector('.ms-up-ar').addEventListener('click', () => {
 //     });
 // });
 
-let initialScroll = 0;
-let Scrollpermissions = false;
+// let initialScroll = 0;
+// let Scrollpermissions = false;
 
-document.querySelector('.ms-main-d-ch2').addEventListener('scroll', () => {
-
-
-    initialScroll = document.querySelector('.ms-main-d-ch2').scrollTop;
-    Scrollpermissions = true;
+// document.querySelector('.ms-main-d-ch2').addEventListener('scroll', () => {
 
 
-});
+//     initialScroll = document.querySelector('.ms-main-d-ch2').scrollTop;
+//     Scrollpermissions = true;
+
+
+// });
 
 //// Select parent and child
-const parent = document.querySelector('.ms-main-d-ch2');
-const iframe = document.querySelector('.ms-clr-set-active > iframe');
+// const parent = document.querySelector('.ms-main-d-ch2');
+// const iframe = document.querySelector('.ms-clr-set-active > iframe');
 
-// Get the iframe's document when it loads
-iframe.onload = () => {
-  const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+// // Get the iframe's document when it loads
+// iframe.onload = () => {
+//   const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
-  // Disable iframe scrolling initially
-  iframeDoc.body.style.overflow = 'hidden';
+//   // Disable iframe scrolling initially
+//   iframeDoc.body.style.overflow = 'hidden';
 
-  // Monitor parent scroll
-  parent.addEventListener('scroll', () => {
-    const parentMaxScroll = parent.scrollHeight - parent.clientHeight;
+//   // Monitor parent scroll
+//   parent.addEventListener('scroll', () => {
+//     const parentMaxScroll = parent.scrollHeight - parent.clientHeight;
 
-    // If parent is fully scrolled
-    if (parent.scrollTop + 100 >= parentMaxScroll) {
-      // Enable iframe scrolling
-      iframeDoc.body.style.overflow = 'auto';
-    } else {
-      // Disable iframe scrolling
-      const style = document.createElement('style');
-      style.textContent = `
-        /* Transparent scrollbar */
-        ::-webkit-scrollbar {
-          width: 1px; /* Adjust width as needed */
-        }
-        ::-webkit-scrollbar-thumb {
-          background-color: rgb(15, 14, 14); /* Fully transparent */
-        }
-        ::-webkit-scrollbar-track {
-          background-color: rgba(222, 162, 241, 0.82); /* Fully transparent */
-        }
-      `;
-      iframeDoc.head.appendChild(style);
+//     // If parent is fully scrolled
+//     if (parent.scrollTop + 100 >= parentMaxScroll) {
+//       // Enable iframe scrolling
+//       iframeDoc.body.style.overflow = 'auto';
+//     } else {
+//       // Disable iframe scrolling
+//       const style = document.createElement('style');
+//       style.textContent = `
+//         /* Transparent scrollbar */
+//         ::-webkit-scrollbar {
+//           width: 1px; /* Adjust width as needed */
+//         }
+//         ::-webkit-scrollbar-thumb {
+//           background-color: rgb(15, 14, 14); /* Fully transparent */
+//         }
+//         ::-webkit-scrollbar-track {
+//           background-color: rgba(222, 162, 241, 0.82); /* Fully transparent */
+//         }
+//       `;
+//       iframeDoc.head.appendChild(style);
     
-      iframeDoc.body.style.overflow = 'hidden';
-    }
-  });
-};
+//       iframeDoc.body.style.overflow = 'hidden';
+//     }
+//   });
+// };
