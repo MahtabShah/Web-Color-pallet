@@ -393,3 +393,10 @@ document.querySelectorAll('iframe').forEach(iframe => {
 // for (let i = 0; i < clr100.length - 2700; i++) {
 //     hexcodevis(clr100[i]);
 // };
+
+
+
+
+
+
+
