@@ -87,7 +87,7 @@ iframe.onload = () => {
     const parentMaxScroll = parent.scrollHeight - parent.clientHeight;
 
     // If parent is fully scrolled
-    if (parent.scrollTop + 1 >= parentMaxScroll) {
+    if (parent.scrollTop + 100 >= parentMaxScroll) {
       // Enable iframe scrolling
       iframeDoc.body.style.overflow = 'auto';
     } else {
