@@ -33,7 +33,12 @@ function likeEventListner(el) {
             if (document.querySelector('.ms-set-collection').children.length === 0) {
                 document.querySelector('.ms-set-collection').innerHTML = `<div class="ms-no-collection-mgs">
             <div>Sorry you don't have any collection........!</div>
-        </div>`;
+            </div>`;
+            el.classList.remove('liked');
+
+                el.querySelector('.ms-number').innerHTML = parseInt(num.innerHTML)-1;
+                heart.style.color = '#4b4747';
+
             }
         });
 
@@ -58,7 +63,7 @@ function likeEventListner(el) {
                 <div>Sorry you don't have any collection........!</div>
             </div>`;
         }
-    
+
 
 
 

@@ -377,7 +377,7 @@ body {
     }
 
     .ms-main-d-ch1 {
-        position: absolute;
+        position: fixed;
         /* right: 0; */
         box-shadow: 0 0 10px black;
         border: none;

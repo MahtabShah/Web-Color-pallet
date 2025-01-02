@@ -221,7 +221,7 @@ function createColorPallet(n, indicattor) {
     if (number < 1) {
         n = Math.floor(Math.random() * 16) + ' days ago';
     } else {
-        n = Math.floor(number / 30) + ' months ago';
+        n = Math.floor(number / 30) + 1 + ' months ago';
 
     }
     newBox.innerHTML = `<div class="ms-like">
