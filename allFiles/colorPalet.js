@@ -213,20 +213,31 @@ function createColorPallet(n, indicattor) {
 
     let newBox = document.createElement('div');
     colorBox.appendChild(newBox);
-    newBox.classList.add('newDiv');
+    newBox.classList.add('ms-discript');
 
-    let is = document.createElement('i');
-    is.classList.add('fa-heart');
-    is.classList.add('fa-solid');
-    newBox.appendChild(is);
-    is.addEventListener('click', () => {
-        is.style.color = 'red';
-        let content = document.createElement('i');
-        content.innerText = '+1';
-        content.style.color = '#555';
-        newBox.appendChild(content);
 
-    })
+
+    let number = Math.floor(Math.random() * 100);
+    if (number < 1) {
+        n = Math.floor(Math.random() * 16) + ' days ago';
+    } else {
+        n = Math.floor(number / 30) + ' months ago';
+
+    }
+    newBox.innerHTML = `<div class="ms-like">
+                       <div class="ms-heart">♥</div>
+                       <div class="ms-number">${Math.floor(Math.random() * 2500)}</div>
+                       </div>
+                     <div class="ms-date">${n}</div>`;
+
+    setTimeout(() => {
+        newBox.querySelector('.ms-like').addEventListener('click', () => {
+            likeEventListner(newBox.querySelector('.ms-like'));
+
+        })
+
+
+    }, 100);
 
 
 }
@@ -281,7 +292,13 @@ let indicattor = '';
 
 function hexcodevis(clr) {
     let rgb = clr.style.backgroundColor.toUpperCase().match(/([0-9]+)/g);
-    let span = document.createElement('span')
+    let span = document.createElement('span');
+    let discrDiv = document.createElement('div');
+    discrDiv.classList.add("ms-discript")
+    // if ( !clr.parentElement.querySelector('.ms-discript')) {
+    // clr.parentElement.appendChild(discrDiv);
+
+    // }
     span.classList.add('hex-code')
     clr.appendChild(span)
     span.style.padding = '4px';
@@ -321,11 +338,12 @@ function hexcodevis(clr) {
 
 
 let allAs = document.querySelector(".ms-color-categories").children;
+let allAsheader = document.querySelectorAll(".ms-header a");
 let active = document.querySelector(`.ms-clr-set-d3`);
 active.classList.add('ms-clr-set-active');
 
-allAs[2].style.color = '#2a6cde';
-
+let As_activeBtn = allAsheader[2];
+As_activeBtn.classList.add('As_activeBtn');
 
 for (let i = 0; i < allAs.length; i++) {
 
@@ -344,11 +362,16 @@ for (let i = 0; i < allAs.length; i++) {
             active.classList.remove('ms-clr-set-active');
             active = document.querySelector(`.ms-clr-set-d${n}`);
             active.classList.add('ms-clr-set-active');
-            for (let j = 0; j < allAs.length; j++) {
-                allAs[j].style.color = 'initial';
+            // for (let j = 0; j < allAs.length; j++) {
+            //     allAs[j].style.color = 'initial';
+            // }
+
+            if (As_activeBtn) {
+                As_activeBtn.classList.remove('As_activeBtn');
+                As_activeBtn= allAs[i];
+                As_activeBtn.classList.add('As_activeBtn');
             }
-            allAs[i].style.color = '#2a6cde';
-            
+
         }
         cnt = -50;
 
@@ -361,6 +384,45 @@ for (let i = 0; i < allAs.length; i++) {
 
             }
         }
+
+
+
+
+    })
+}
+
+
+
+for (let i = 0; i < allAsheader.length; i++) {
+
+    allAsheader[i].addEventListener('click', () => {
+
+
+        n = allAsheader[i].attributes.value.nodeValue;
+
+        if (active) {
+            active.classList.remove('ms-clr-set-active');
+            active = document.querySelector(`.ms-clr-set-d${n}`);
+            active.classList.add('ms-clr-set-active');
+            
+            if (As_activeBtn) {
+                As_activeBtn.classList.remove('As_activeBtn');
+                As_activeBtn = allAsheader[i];
+                As_activeBtn.classList.add('As_activeBtn');
+            }
+
+        }
+        // cnt = -50;
+
+        // if (i > 3) {
+
+
+        //     for (let i = 0; i < 40; i++) {
+        //         createColorPallet(parseInt(n), 'c');
+
+
+        //     }
+        // }
 
 
 
@@ -382,7 +444,9 @@ document.querySelectorAll('iframe').forEach(iframe => {
         console.log(iframeDoc)
 
         for (let i = 0; i < clr100.length; i++) {
-            hexcodevis(clr100[i]);
+            copyFun(clr100[i]);
+            // hexcodevis(clr100[i]);
+
         };
     }, 10);
 
@@ -391,12 +455,50 @@ document.querySelectorAll('iframe').forEach(iframe => {
 // let clr100 = document.querySelectorAll('.clr');
 
 // for (let i = 0; i < clr100.length - 2700; i++) {
-//     hexcodevis(clr100[i]);
+// hexcodevis(clr100[i]);
 // };
 
 
 
 
 
+function copyFun(clr) {
+    let rgb = clr.style.backgroundColor.toUpperCase().match(/([0-9]+)/g);
+    let span = clr.querySelector('span');
+    span.style.padding = '4px';
+    span.style.color = 'transparent';
+    span.style.borderRadius = '4px';
+    span.style.padding = '5px 7px';
+    span.style.background = 'transparent';
+    span.textContent = rgbToHex(rgb[0], rgb[1], rgb[2]);
 
+    clr.addEventListener('mouseover', () => {
+
+        clr.children[0].style.color = '#fff';
+        clr.children[0].style.background = '#333';
+    });
+
+    clr.addEventListener('mouseout', () => {
+        clr.children[0].style.color = 'transparent';
+        clr.children[0].style.background = 'transparent';
+    });
+
+    clr.addEventListener('click', async () => {
+        const Content = clr.children[0].textContent;
+
+        try {
+            // Use Clipboard API to copy the content
+            await navigator.clipboard.writeText(Content);
+            clr.children[0].textContent = 'copied';
+            setTimeout(() => {
+                clr.children[0].textContent = Content;
+
+            }, 1000)
+            // alert('color HEXcode copied !');
+        } catch (error) {
+            console.error('Error copying HEXcode:', error);
+            alert('Failed to copy HEXcode. Please try again...');
+        }
+    })
+}
 
