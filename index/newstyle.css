@@ -311,7 +311,7 @@ body {
     height: 15px;
 }
 
-h3 {
+.hms-3 {
     font-size: calc(min(23%, 85px) - 50px);
     font-size: calc(10px + 30%);
 }
