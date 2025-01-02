@@ -313,7 +313,7 @@ body {
 
 h3 {
     font-size: calc(min(23%, 85px) - 50px);
-    font-size: calc(10px + 40%);
+    font-size: calc(10px + 30%);
 }
 
 
