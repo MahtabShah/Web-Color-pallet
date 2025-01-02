@@ -354,6 +354,18 @@ for (let i = 0; i < allAs.length; i++) {
 
         }
 
+
+        let msleftsidebar = document.querySelector('.ms-main-d-ch1');
+
+
+        if (window.getComputedStyle(msleftsidebar).display === 'fixed') {
+            msleftsidebar.style.display = 'none';
+            msleftsidebar.style.transform = 'translateX(0%)';
+            msleftsidebar.style.transitionDuration = '0.3s';
+
+
+        }
+
         // document.querySelector('.colorBox').innerHTML = "";
 
         n = allAs[i].attributes.value.nodeValue;
@@ -368,7 +380,7 @@ for (let i = 0; i < allAs.length; i++) {
 
             if (As_activeBtn) {
                 As_activeBtn.classList.remove('As_activeBtn');
-                As_activeBtn= allAs[i];
+                As_activeBtn = allAs[i];
                 As_activeBtn.classList.add('As_activeBtn');
             }
 
@@ -404,7 +416,7 @@ for (let i = 0; i < allAsheader.length; i++) {
             active.classList.remove('ms-clr-set-active');
             active = document.querySelector(`.ms-clr-set-d${n}`);
             active.classList.add('ms-clr-set-active');
-            
+
             if (As_activeBtn) {
                 As_activeBtn.classList.remove('As_activeBtn');
                 As_activeBtn = allAsheader[i];
@@ -465,7 +477,6 @@ document.querySelectorAll('iframe').forEach(iframe => {
 function copyFun(clr) {
     let rgb = clr.style.backgroundColor.toUpperCase().match(/([0-9]+)/g);
     let span = clr.querySelector('span');
-    span.style.padding = '4px';
     span.style.color = 'transparent';
     span.style.borderRadius = '4px';
     span.style.padding = '5px 7px';

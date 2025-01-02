@@ -343,7 +343,7 @@ body {
 
 }
 
-@media (min-width:400px) and (max-width:620px) {
+@media (min-width:4001px) and (max-width:620px) {
 
     .ms-color-picker-container {
         margin: 10px auto;
@@ -378,14 +378,17 @@ body {
 
     .ms-main-d-ch1 {
         position: fixed;
-        /* right: 0; */
+        right: 0;
         box-shadow: 0 0 10px black;
         border: none;
         left: 0;
-        bottom: 0;
+        /* bottom: 0; */
         top: 50px;
-
+        transform: translateX(-100%);
+        transition-duration: 800ms;
     }
+
+    
 
 
     .ms-color-picker-container {

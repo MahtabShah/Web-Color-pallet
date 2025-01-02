@@ -4,25 +4,40 @@ let ms3bar = document.querySelector('.ms-3-line-p');
 ms3bar.addEventListener('click', () => {
     if (window.getComputedStyle(msleftsidebar).display === 'none') {
         msleftsidebar.style.display = 'initial';
+        msleftsidebar.style.transform = 'translateX(0%)';
+        msleftsidebar.style.transitionDuration = '0.3s';
+
+
     } else {
-        msleftsidebar.style.display = 'none';
+        document.querySelector('.ms-main-d-ch1').style.display = 'none';
 
     }
 });
 
+
+// msleftsidebar.addEventListener('click', () => {
+//     if (window.getComputedStyle(msleftsidebar).display === 'fixed') {
+//         msleftsidebar.style.display = 'none';
+//         msleftsidebar.style.transform = 'translateX(0%)';
+//         msleftsidebar.style.transitionDuration = '0.3s';
+
+
+//     }
+// });
 
 setInterval(() => {
     if (window.getComputedStyle(ms3bar).display === 'none') {
         msleftsidebar.style.display = 'initial';
     }
 
-    if (window.getComputedStyle(ms3bar).display === 'none' && parseInt(window.getComputedStyle(document.querySelector('body')).width) < 400) {
+    if (window.getComputedStyle(ms3bar).display === 'none' && parseInt(window.getComputedStyle(document.querySelector('body')).width) <= 400) {
         ms3bar.style.display = 'flex';
         msleftsidebar.style.display = 'none';
     } else if (parseInt(window.getComputedStyle(document.querySelector('body')).width) > 400) {
         ms3bar.style.display = 'none';
 
     }
+
 }, 0);
 
 
